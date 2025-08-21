@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>30x30 Paintable Grid</title>
+  <style>
+    html, body { height:100%; margin:0; background:#111; color:#ddd; font-family: system-ui, -apple-system, sans-serif; }
+    #app { position:fixed; inset:0; }
+    #ui {
+      position: fixed; top: 12px; left: 12px; z-index: 9999;
+      display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+      background: rgba(0,0,0,0.5); padding: 10px 12px; border-radius: 12px; backdrop-filter: blur(6px);
+    }
+    .swatch {
+      width: 28px; height: 28px; border-radius: 6px; border: 2px solid #333; cursor: pointer;
+      display:inline-block;
+    }
+    .swatch.active { outline: 2px solid #fff; }
+    button {
+      padding: 8px 12px; border-radius: 8px; border: 1px solid #333; background:#222; color:#ddd; cursor:pointer;
+    }
+    .label { margin-right: 4px; opacity: .8; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <div id="ui">
+    <span class="label">色:</span>
+    <div id="palette"></div>
+    <button id="exportCsv">CSVエクスポート</button>
+    <button id="clear">リセット</button>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
